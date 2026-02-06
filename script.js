@@ -1,3 +1,5 @@
+alert("SCRIPT IS RUNNING");
+
 /* 💬 POSITIVE MESSAGES */
 const messages = [
   "You’re growing beautifully 🌱",
