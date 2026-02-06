@@ -21,18 +21,17 @@ setInterval(showMessage, 3600000);
 
 /* 🌱 PLANT GROWTH */
 function growPlant() {
-  const hour = 20;
   const stem = document.querySelector(".stem");
   const leaves = document.querySelectorAll(".leaf");
   const hat = document.querySelector(".wizard-hat");
 
-  stem.style.height = `${30 + hour * 3}px`;
+  stem.style.height = "120px";
+  stem.style.background = "red";
 
-  if (hour >= 9) leaves[0].style.opacity = 1;
-  if (hour >= 13) leaves[1].style.opacity = 1;
-  if (hour >= 18) hat.style.opacity = 1;
-  if (hour >= 20) stem.style.boxShadow = "0 0 10px #8affc1";
+  leaves.forEach(leaf => leaf.style.opacity = 1);
+  hat.style.opacity = 1;
 }
+
 
 growPlant();
 setInterval(growPlant, 3600000);
