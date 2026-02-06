@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to top, #c8f7dc, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  color: #2f7a4f;
+}
+
+#message {
+  background: #ffffffcc;
+  padding: 12px;
+  border-radius: 15px;
+  max-width: 260px;
+  margin: 10px auto;
+}
+
+/* 🌱 PLANT */
+.plant-container {
+  position: relative;
+  width: 120px;
+  height: 220px;
+  margin: 0 auto 20px;
+}
+
+.pot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: #a86b3c;
+  border-radius: 0 0 20px 20px;
+}
+
+.stem {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  width: 10px;
+  height: 40px;
+  background: #2f7a4f;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  transition: all 1s ease;
+}
+
+.leaf {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background: #4caf50;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.leaf.left {
+  left: 15px;
+  bottom: 100px;
+  transform: rotate(-20deg);
+}
+
+.leaf.right {
+  right: 15px;
+  bottom: 130px;
+  transform: rotate(20deg);
+}
+
+.wizard-hat {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* 🌦️ WEATHER */
+.weather-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sun {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  opacity: 0;
+  animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rain::before {
+  content: "💧 💧 💧 💧 💧";
+  position: absolute;
+  width: 100%;
+  top: -20px;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: rainFall 1s linear infinite;
+}
+
+@keyframes rainFall {
+  to { transform: translateY(100vh); }
+}
