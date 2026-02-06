@@ -1,66 +1,13 @@
-alert("SCRIPT IS RUNNING");
+document.body.style.background = "pink";
 
-/* 💬 POSITIVE MESSAGES */
-const messages = [
-  "You’re growing beautifully 🌱",
-  "Tiny steps still count 💚",
-  "You survived this hour ✨",
-  "Rest is productive too 🍃",
-  "You are doing enough 🌸"
-];
+const stem = document.querySelector(".stem");
+const leaves = document.querySelectorAll(".leaf");
+const hat = document.querySelector(".wizard-hat");
 
-const messageEl = document.getElementById("message");
+stem.style.height = "140px";
+stem.style.background = "red";
 
-function showMessage() {
-  messageEl.textContent =
-    messages[Math.floor(Math.random() * messages.length)];
-}
+leaves.forEach(l => l.style.opacity = 1);
+hat.style.opacity = 1;
 
-showMessage();
-setInterval(showMessage, 3600000);
-
-/* 🌱 PLANT GROWTH */
-function growPlant() {
-  const stem = document.querySelector(".stem");
-  const leaves = document.querySelectorAll(".leaf");
-  const hat = document.querySelector(".wizard-hat");
-
-  stem.style.height = "120px";
-  stem.style.background = "red";
-
-  leaves.forEach(leaf => leaf.style.opacity = 1);
-  hat.style.opacity = 1;
-}
-
-
-growPlant();
-setInterval(growPlant, 3600000);
-
-/* 🌦️ WEATHER */
-const API_KEY = "3554ccf10fe237a494e595c1282265e0";
-const CITY = "Kolkata";
-
-async function updateWeather() {
-  try {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}`
-    );
-    const data = await res.json();
-
-    const condition = data.weather[0].main.toLowerCase();
-    const rain = document.querySelector(".rain");
-    const sun = document.querySelector(".sun");
-
-    rain.style.opacity = 0;
-    sun.style.opacity = 0;
-
-    if (condition.includes("rain")) rain.style.opacity = 1;
-    if (condition.includes("clear")) sun.style.opacity = 1;
-
-  } catch (e) {
-    console.log("Weather error", e);
-  }
-}
-
-updateWeather();
-setInterval(updateWeather, 1800000);
+alert("JS IS DEFINITELY RUNNING");
