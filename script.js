@@ -19,7 +19,7 @@ setInterval(showMessage, 3600000);
 
 /* 🌱 PLANT GROWTH */
 function growPlant() {
-  const hour = new Date().getHours();
+  const hour = 20;
   const stem = document.querySelector(".stem");
   const leaves = document.querySelectorAll(".leaf");
   const hat = document.querySelector(".wizard-hat");
