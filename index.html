@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Wizard 🌱</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2f7a4f" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Weather effects -->
+    <div class="weather-layer">
+      <div class="rain"></div>
+      <div class="sun">☀️</div>
+    </div>
+
+    <!-- Plant -->
+    <div class="plant-container">
+      <div class="pot"></div>
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+      <div class="wizard-hat">🧙‍♂️</div>
+    </div>
+
+    <h1>Plant Wizard</h1>
+    <p id="message">Growing good vibes 🌸</p>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
